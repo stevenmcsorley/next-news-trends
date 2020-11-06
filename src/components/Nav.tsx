@@ -10,10 +10,6 @@ const Nav = () => (
         <a sx={{fontWeight: 'bold', fontSize: 4, cursor: 'pointer'}}>React News Trends</a>
       </Link>
 
-      <Link href="/article">
-        <a sx={{color: 'text', fontSize: 3, cursor: 'pointer'}}>Article</a>
-      </Link>
-
     </nav>
   </header>
 )

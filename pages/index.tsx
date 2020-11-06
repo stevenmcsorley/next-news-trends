@@ -2,22 +2,7 @@
 /** @jsx jsx */
 import { jsx, Container, Grid, Card, Image, Text } from "theme-ui";
 import Link from "next/link";
-
-import axios from "axios";
-
-const fetchData = async () =>
-  await axios
-    .get(
-      "https://content.guardianapis.com/search?order-by=newest&show-fields=all&section=world&q=World%20news&page-size=48&api-key=0d3ae253-e9ba-4bad-814e-69a9a5fda18e"
-    )
-    .then((res) => ({
-      error: false,
-      data: res.data.response,
-    }))
-    .catch(() => ({
-      error: true,
-      data: null,
-    }));
+import { fetchCategory } from "../lib/category";
 
 const Home = ({ data, error }) => {
   return (
@@ -32,12 +17,14 @@ const Home = ({ data, error }) => {
             <Grid gap={2} columns={[2, null, 4]}>
               {data.results.map((item, key) => (
                 <Card key={key}>
-                  
                   <Image src={item.fields.thumbnail} />
-                  <Link href="/article/[...params].tsx" as={`/article/${item.id}`}>
+                  <Link
+                    href="/article/[...params].tsx"
+                    as={`/article/${item.id}`}
+                  >
                     <a>
-                  <Text variant="caps">{item.webTitle}</Text>
-                  </a>
+                      <Text variant="caps">{item.webTitle}</Text>
+                    </a>
                   </Link>
                 </Card>
               ))}
@@ -50,7 +37,7 @@ const Home = ({ data, error }) => {
 };
 
 export const getStaticProps = async () => {
-  const data = await fetchData();
+  const data = await fetchCategory();
 
   return {
     props: data,
