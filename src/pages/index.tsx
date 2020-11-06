@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx, Container, Grid, Card, Image, Text } from "theme-ui";
 import Link from "next/link";
-import { fetchCategory } from "../lib/category";
+import { fetchCategory } from "../../lib/category";
 
 const Home = ({ data, error }) => {
   return (

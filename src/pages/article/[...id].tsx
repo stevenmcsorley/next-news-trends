@@ -3,7 +3,7 @@
 import { jsx, Container, Grid, Card, Image, Text } from "theme-ui";
 import Link from "next/link";
 
-import { fetchArticle } from "../../lib/article";
+import { fetchArticle } from "../../../lib/article";
 
 const Article = ({ props, error }) => {
   return (
