@@ -9,13 +9,15 @@ const categories = CategoryConfig();
 const Nav = () => (
   <header sx={{height: '60px', bg: 'primary', borderBottom: '1px solid', borderColor: 'primary'}}>
     <Flex as='nav' sx={{display: 'flex', alignItems: 'center',  justifyContent: 'space-between', variant: 'containers.page', height: '100%'}}>
+      <div>
       <NavLink href="/">
         <a sx={{fontWeight: 'bold', fontSize: 2, cursor: 'pointer'}}>RTNews</a>
       </NavLink>
+      </div>
 
       {categories.map((link, index) => {
                 return (        
-                    <NavLink href={`/${link.sectionId}`} p={1}>
+                    <NavLink href={`/${link.sectionId}`} p={1} key={index}>
                       {link.sectionName}
                     </NavLink>
                  
