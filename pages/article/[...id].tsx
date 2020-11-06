@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Container, Grid, Card, Image, Text } from "theme-ui";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
 import { fetchArticle } from "../../lib/article";
@@ -11,9 +10,6 @@ const Article = ({ props, error }) => {
     <Container p={4} bg="muted">
       <section>
         <div>
-          <header>
-            <h4>News {}</h4>
-          </header>
           {error && <div>There was an error.</div>}
           {!error && props.article && (
             <Grid gap={3} columns={[2, "2fr 1fr"]}>
