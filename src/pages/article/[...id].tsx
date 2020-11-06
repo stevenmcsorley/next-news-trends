@@ -9,7 +9,7 @@ const Article = ({ props, error }) => {
   return (
     <Container p={4} bg="muted">
       <section>
-        <div>
+      <div sx={{ variant: "containers.page", height: "100%" }}>
           {error && <div>There was an error.</div>}
           {!error && props.article && (
             <Grid gap={3} columns={[2, "2fr 1fr"]}>

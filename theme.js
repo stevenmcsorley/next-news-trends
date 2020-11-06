@@ -1,11 +1,16 @@
-import { swiss } from '@theme-ui/presets'
+import { tailwind } from '@theme-ui/presets'
 
 const theme = {
-  ...swiss,
-//   colors:{
-// ...swiss.colors,
-// background: 'black'
-//   },
+  ...tailwind,
+  colors:{
+...tailwind.colors,
+  },
+  text: {
+    default: {
+      color: 'inherit',
+      fontSize: 3,
+    }
+  },
   containers: {
     card: {
       boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
@@ -22,7 +27,7 @@ const theme = {
     }
   },
   styles: {
-    ...swiss.styles
+    ...tailwind.styles
   }
 }
 
