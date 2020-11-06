@@ -5,6 +5,20 @@ const theme = {
   colors:{
 ...tailwind.colors,
   },
+  links: {
+    color: 'rgba(0,0,0,0.24)',
+    bold: {
+      fontWeight: 'bold',
+    },
+    nav: {
+      fontWeight: 'bold',
+      color: 'white',
+      textDecoration: 'none',
+      '&:hover': {
+        bg: 'dark',
+      },
+    }
+  },
   text: {
     default: {
       color: 'inherit',
