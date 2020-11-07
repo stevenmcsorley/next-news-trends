@@ -1,6 +1,5 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx, Container, Grid, Card, Image, Text } from "theme-ui";
+import React from "react";
+import { Container, Grid, Box, Image, Text } from "@chakra-ui/core";
 import Link from "next/link";
 
 import { fetchArticle } from "../../../lib/article";
@@ -9,22 +8,22 @@ const Article = ({ props, error }) => {
   return (
     <Container p={4} bg="muted">
       <section>
-      <div sx={{ variant: "containers.page", height: "100%" }}>
+      <div>
           {error && <div>There was an error.</div>}
           {!error && props.article && (
             <Grid gap={3} columns={[2, "2fr 1fr"]}>
-              <Card>
+              <Box>
                 <Text>{props.article.content.webTitle}</Text>
                 <Text
                   dangerouslySetInnerHTML={{
                     __html: props.article.content.fields.body,
                   }}
                 ></Text>
-              </Card>
-              <Card>
+              </Box>
+              <Box>
                 <Grid gap={2} columns={[1]}>
                   {props.article.relatedContent.map((item, key) => (
-                    <Card key={key}>
+                    <Box key={key}>
                       <Image src={item.fields.thumbnail} />
                       <Link
                         href="/article/[...id].tsx"
@@ -34,10 +33,10 @@ const Article = ({ props, error }) => {
                           <Text variant="caps">{item.webTitle}</Text>
                         </a>
                       </Link>
-                    </Card>
+                    </Box>
                   ))}
                 </Grid>
-              </Card>
+              </Box>
             </Grid>
           )}
         </div>

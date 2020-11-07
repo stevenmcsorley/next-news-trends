@@ -3,6 +3,10 @@
     height: auto;
   }
 
-  a{
+  /* a{
     color:black;
+  } */
+
+  a.artclelinks{
+    color:white;
   }
