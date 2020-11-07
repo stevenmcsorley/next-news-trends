@@ -2,7 +2,7 @@
 Next.js and theme-ui version of [React News Trends](https://react-news-trends.co.uk/)
 Being continiusly deployed to Vercal
 
-[Next News Trends](https://next-news-trends-hc6018bcu.vercel.app/) 
+[Next News Trends](https://next-news-trends.vercel.app/) 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
