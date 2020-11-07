@@ -12,9 +12,9 @@ import {
 } from "@chakra-ui/core";
 import NextLink from "next/link";
 import moment from "moment";
-import { fetchCategory } from "../../lib/category";
+import { fetchCategory } from "../lib/category";
 
-const Home = ({ data, error }) => {
+const TopNews = ({ data, error }) => {
   return (
     <Container maxW="lg" centerContent>
       {error && <div>There was an error.</div>}
@@ -39,7 +39,7 @@ const Home = ({ data, error }) => {
                   zIndex={2}
                   bgImage="linear-gradient(0deg, black 60%, rgba(0,0,0, 0))"
                 >
-                  <Text color="teal.500" fontSize="sm">
+                  <Text color="teal.500">
                     {item.sectionName} /{" "}
                     {moment(`${item.webPublicationDate}`).fromNow()}
                   </Text>
@@ -47,7 +47,7 @@ const Home = ({ data, error }) => {
                     href="/article/[...params].tsx"
                     as={`/article/${item.id}`}
                   >
-                    <Link color="white" fontSize="xl">{item.webTitle}</Link>
+                    <Link color="white" fontSize="lg">{item.webTitle}</Link>
                   </NextLink>
                 </Box>
                 <AspectRatio maxH="500px" ratio={4 / 3}>
@@ -70,7 +70,7 @@ const Home = ({ data, error }) => {
                   w="100%"
                   bgImage="linear-gradient(0deg, black 60%, rgba(0,0,0, 0))"
                 >
-                  <Text color="teal.500" fontSize="sm">
+                  <Text color="teal.500">
                     {item.sectionName} /{" "}
                     {moment(`${item.webPublicationDate}`).fromNow()}
                   </Text>
@@ -93,17 +93,12 @@ const Home = ({ data, error }) => {
           >
             {data.results.slice(3, 7).map((item, index) => (
               <Box key={index}>
-                
                 <Image src={item.fields.thumbnail} />
-                <Text color="teal.500" fontSize="sm">
-                    {item.sectionName} /{" "}
-                    {moment(`${item.webPublicationDate}`).fromNow()}
-                  </Text>
                 <NextLink
                   href="`/article/${item.id}`"
                   as={`/article/${item.id}`}
                 >
-                  <Link color="black" fontSize="sm">{item.webTitle}</Link>
+                  <Link color="black">{item.webTitle}</Link>
                 </NextLink>
               </Box>
             ))}
@@ -114,12 +109,6 @@ const Home = ({ data, error }) => {
   );
 };
 
-export const getStaticProps = async () => {
-  const data = await fetchCategory();
 
-  return {
-    props: data,
-  };
-};
 
-export default Home;
+export default TopNews;
