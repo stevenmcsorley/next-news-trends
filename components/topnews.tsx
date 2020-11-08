@@ -23,11 +23,11 @@ const TopNews = ({ data, error }) => {
             w="100%"
             gridAutoRows="1fr"
             templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(5, 1fr)" }}
-            gap={4}
+            gap={{base:0, lg:4}}
             mb="4"
           >
             {data.results.slice(0, 1).map((item, index) => (
-              <GridItem rowSpan={{ base: 1, lg: 2 }} colSpan={3} pos="relative">
+              <GridItem rowSpan={{ base: 1, lg: 2 }} colSpan={{base:1, lg:3}} pos="relative">
                 <Box
                   p="4"
                   pos="absolute"

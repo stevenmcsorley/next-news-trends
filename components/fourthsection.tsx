@@ -22,7 +22,7 @@ const Fourthsection = ({ data, error }) => {
           <Grid
             w="100%"
             gridAutoRows="1fr"
-            templateColumns="repeat(12, 1fr)"
+            templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(12, 1fr)" }}
             gap={4}
             mb="4"
           >
