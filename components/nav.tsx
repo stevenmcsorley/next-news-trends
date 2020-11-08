@@ -47,8 +47,8 @@ const Nav = (props) => {
           </Box>
 
           <Box
-            display={{ sm: show ? "block" : "none", md: "flex" }}
-            width={{ sm: "full", md: "auto" }}
+            display={{ base: show ? "block" : "none", md: "flex" }}
+            width={{ base: "full", md: "auto" }}
             alignItems="center"
             flexGrow={1}
           >
