@@ -27,7 +27,7 @@ const MiddleNews = ({ data, error }) => {
             mb="4"
           >
             {data.results.slice(0, 1).map((item, index) => (
-              <GridItem rowSpan={2} colSpan={6} bg="grey" pos="relative">
+              <GridItem rowSpan={2} colSpan={7} bg="grey" pos="relative">
                 <Box
                   p="4"
                   pos="absolute"
@@ -56,14 +56,14 @@ const MiddleNews = ({ data, error }) => {
                 </AspectRatio>
               </GridItem>
             ))}
-            <GridItem rowSpan={2} colSpan={6} pos="relative">
+            <GridItem rowSpan={2} colSpan={5} pos="relative">
               {data.results.slice(1, 6).map((item, index) => (
                 <Flex align="center">
                   <Flex
                     align="center"
                     justify="center"
                   >
-                    <Box ratio={4 / 3} w="120px">
+                    <Box ratio={4 / 3} w="122px">
                     
                     <Image src={item.fields.thumbnail} objectFit="fill" />
                     
