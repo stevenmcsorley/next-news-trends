@@ -31,7 +31,7 @@ const TopNews = ({ data, error }) => {
                 rowSpan={{ base: 1, lg: 2 }}
                 colSpan={{ base: 1, lg: 3 }}
                 pos="relative"
-                mb="4"
+                mb={{base: 4, md: 0, lg:0}}
               >
                 <Box
                   pos="absolute"
@@ -57,13 +57,13 @@ const TopNews = ({ data, error }) => {
                     </NextLink>
                   </Text>
                 </Box>
-                <AspectRatio maxH="100%" ratio={4 / 3}>
+                <AspectRatio height="100%" ratio={4 / 3}>
                   <Image src={item.fields.thumbnail} />
                 </AspectRatio>
               </GridItem>
             ))}
             {data.results.slice(1, 3).map((item, index) => (
-              <GridItem colSpan={2} pos="relative" mb="4">
+              <GridItem colSpan={2} pos="relative" mb={{base: 4, md: 0, lg:0}}>
                 <AspectRatio maxH="100%" ratio={{ base: 4 / 3, lg: 16 / 9 }}>
                   <Image src={item.fields.thumbnail} width="100%" />
                 </AspectRatio>
