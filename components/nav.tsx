@@ -16,8 +16,8 @@ const Nav = () => {
       justify="space-between"
       wrap="wrap"
       padding="1.5rem"
-      bg="teal.500"
-      color="white"
+      bg="white"
+      color="black"
       mb="4"
     >
       <Container maxW="xl" centerContent>
@@ -29,7 +29,7 @@ const Nav = () => {
 
       <Box d={{ base: "block", md: "none" }} onClick={handleToggle}>
         <svg
-          fill="white"
+          fill="black"
           width="12px"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"

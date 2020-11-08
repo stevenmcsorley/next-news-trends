@@ -38,7 +38,7 @@ const TopNews = ({ data, error }) => {
                   zIndex={2}
                   bgImage="linear-gradient(0deg, black 60%, rgba(0,0,0, 0))"
                 >
-                  <Text color="teal.500" fontSize="sm">
+                  <Text color="teal.400" fontSize="sm">
                     {item.sectionName} /{" "}
                     {moment(`${item.webPublicationDate}`).fromNow()}
                   </Text>
@@ -71,7 +71,7 @@ const TopNews = ({ data, error }) => {
                   w="100%"
                   bgImage="linear-gradient(0deg, black 60%, rgba(0,0,0, 0))"
                 >
-                  <Text color="teal.500" fontSize="sm">
+                  <Text color="teal.400" fontSize="sm">
                     {item.sectionName} /{" "}
                     {moment(`${item.webPublicationDate}`).fromNow()}
                   </Text>
@@ -96,7 +96,7 @@ const TopNews = ({ data, error }) => {
             {data.results.slice(3, 7).map((item, index) => (
               <Box key={index}>
                 <Image src={item.fields.thumbnail} />
-                <Text color="teal.500" fontSize="sm">
+                <Text color="teal.400" fontSize="sm">
                   {item.sectionName} /{" "}
                   {moment(`${item.webPublicationDate}`).fromNow()}
                 </Text>

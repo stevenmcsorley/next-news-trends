@@ -38,7 +38,7 @@ const SecondSection = ({ data, error }) => {
                   zIndex={2}
                   bgImage="linear-gradient(0deg, black 60%, rgba(0,0,0, 0))"
                 >
-                  <Text color="teal.500" fontSize="sm">
+                  <Text color="teal.400" fontSize="sm">
                     {item.sectionName} /{" "}
                     {moment(`${item.webPublicationDate}`).fromNow()}
                   </Text>
@@ -71,7 +71,7 @@ const SecondSection = ({ data, error }) => {
                     href="/article/[...params].tsx"
                     as={`/article/${item.id}`}
                   >
-                    <Link color="black" fontSize="lg">
+                    <Link color="white" fontSize="lg">
                       {item.webTitle}
                     </Link>
                   </NextLink>
@@ -94,7 +94,7 @@ const SecondSection = ({ data, error }) => {
                     href="/article/[...params].tsx"
                     as={`/article/${item.id}`}
                   >
-                    <Link color="black" fontSize="lg">
+                    <Link color="white" fontSize="lg">
                       {item.webTitle}
                     </Link>
                   </NextLink>
