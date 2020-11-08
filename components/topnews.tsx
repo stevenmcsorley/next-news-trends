@@ -22,12 +22,12 @@ const TopNews = ({ data, error }) => {
           <Grid
             w="100%"
             gridAutoRows="1fr"
-            templateColumns="repeat(5, 1fr)"
+            templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(5, 1fr)" }}
             gap={4}
             mb="4"
           >
             {data.results.slice(0, 1).map((item, index) => (
-              <GridItem rowSpan={2} colSpan={3} pos="relative">
+              <GridItem rowSpan={ {base: 1, lg:2 }} colSpan={3} pos="relative">
                 <Box
                   p="4"
                   pos="absolute"
@@ -58,7 +58,7 @@ const TopNews = ({ data, error }) => {
             ))}
             {data.results.slice(1, 3).map((item, index) => (
               <GridItem colSpan={2} pos="relative">
-                <AspectRatio maxH="100%" ratio={16 / 9}>
+                <AspectRatio maxH="100%" ratio={{base: (4/ 3), lg:(16 / 9)}}>
                   <Image src={item.fields.thumbnail} width="100%" />
                 </AspectRatio>
                 <Box
@@ -89,13 +89,13 @@ const TopNews = ({ data, error }) => {
           </Grid>
           <Grid
             w="100%"
-            templateColumns="repeat(auto-fit, minmax(200px, 1fr))"
+            templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(auto-fit, minmax(200px, 1fr))" }}
             gap={4}
             mb="4"
           >
             {data.results.slice(3, 6).map((item, index) => (
               <Box key={index}>
-                <Image src={item.fields.thumbnail} />
+                <Image src={item.fields.thumbnail} w="100%"/>
                 <Text color="teal.400" fontSize="sm">
                   {item.sectionName} /{" "}
                   {moment(`${item.webPublicationDate}`).fromNow()}
