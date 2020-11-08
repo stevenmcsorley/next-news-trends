@@ -80,7 +80,7 @@ const SecondSection = ({ data, error }) => {
             </GridItem>
 
             <GridItem rowSpan={2} colSpan={3} pos="relative">
-              {data.results.slice(3, 8).map((item, index) => (
+              {data.results.slice(3, 6).map((item, index) => (
                 <Box mb="4">
                   {/* <AspectRatio  ratio={16 / 9}>
                   <Image src={item.fields.thumbnail} width="100%" />

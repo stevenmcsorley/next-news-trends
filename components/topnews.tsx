@@ -93,7 +93,7 @@ const TopNews = ({ data, error }) => {
             gap={4}
             mb="4"
           >
-            {data.results.slice(3, 7).map((item, index) => (
+            {data.results.slice(3, 6).map((item, index) => (
               <Box key={index}>
                 <Image src={item.fields.thumbnail} />
                 <Text color="teal.400" fontSize="sm">

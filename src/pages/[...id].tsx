@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "@chakra-ui/core";
 import TopNews from "./../../components/topnews";
+import CategoryExtend from "./../../components/categoryextend";
 
 import { fetchCategory } from "../../lib/category";
 
@@ -8,6 +9,7 @@ const Article = ({ props, error }) => {
   return (
     <Container maxW="xl" centerContent>
       <TopNews {...props.data} />
+      <CategoryExtend {...props.data} />
     </Container>
   );
 };
