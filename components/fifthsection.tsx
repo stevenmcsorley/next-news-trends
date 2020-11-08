@@ -27,7 +27,7 @@ const Fifthsection = ({ data, error }) => {
             mb="4"
           >
             {data.results.slice(0, 2).map((item, index) => (
-              <GridItem rowSpan={2} colSpan={6} pos="relative">
+              <GridItem rowSpan={1} colSpan={6} pos="relative">
                 <Box
                   p="4"
                   pos="absolute"
