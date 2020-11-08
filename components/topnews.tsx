@@ -27,7 +27,7 @@ const TopNews = ({ data, error }) => {
             mb="4"
           >
             {data.results.slice(0, 1).map((item, index) => (
-              <GridItem rowSpan={2} colSpan={3} bg="grey" pos="relative">
+              <GridItem rowSpan={2} colSpan={3} pos="relative">
                 <Box
                   p="4"
                   pos="absolute"
@@ -36,9 +36,9 @@ const TopNews = ({ data, error }) => {
                   right="0"
                   w="100%"
                   zIndex={2}
-                  bgImage="linear-gradient(0deg, black 60%, rgba(0,0,0, 0))"
+                  bgImage="linear-gradient(0deg, rgba(0,0,0, 0.4) 70%, rgba(0,0,0, 0))"
                 >
-                  <Text color="teal.400" fontSize="sm">
+                  <Text color="teal.300" fontSize="sm" fontWeight="bold">
                     {item.sectionName} /{" "}
                     {moment(`${item.webPublicationDate}`).fromNow()}
                   </Text>
@@ -51,14 +51,14 @@ const TopNews = ({ data, error }) => {
                     </Link>
                   </NextLink>
                 </Box>
-                <AspectRatio maxH="500px" ratio={4 / 3}>
+                <AspectRatio maxH="100%" ratio={4 / 3}>
                   <Image src={item.fields.thumbnail} />
                 </AspectRatio>
               </GridItem>
             ))}
             {data.results.slice(1, 3).map((item, index) => (
-              <GridItem colSpan={2} bg="grey" pos="relative">
-                <AspectRatio maxH="200px" ratio={16 / 9}>
+              <GridItem colSpan={2} pos="relative">
+                <AspectRatio maxH="100%" ratio={16 / 9}>
                   <Image src={item.fields.thumbnail} width="100%" />
                 </AspectRatio>
                 <Box
@@ -69,9 +69,9 @@ const TopNews = ({ data, error }) => {
                   zIndex={2}
                   right="0"
                   w="100%"
-                  bgImage="linear-gradient(0deg, black 60%, rgba(0,0,0, 0))"
+                  bgImage="linear-gradient(0deg, rgba(0,0,0, 0.5) 50%, rgba(0,0,0, 0))"
                 >
-                  <Text color="teal.400" fontSize="sm">
+                  <Text color="teal.300" fontSize="sm" fontWeight="bold">
                     {item.sectionName} /{" "}
                     {moment(`${item.webPublicationDate}`).fromNow()}
                   </Text>

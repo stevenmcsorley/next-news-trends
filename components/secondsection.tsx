@@ -27,7 +27,7 @@ const SecondSection = ({ data, error }) => {
             mb="4"
           >
             {data.results.slice(0, 1).map((item, index) => (
-              <GridItem rowSpan={2} colSpan={5} bg="grey" pos="relative">
+              <GridItem rowSpan={2} colSpan={5} pos="relative">
                 <Box
                   p="4"
                   pos="absolute"
@@ -36,9 +36,9 @@ const SecondSection = ({ data, error }) => {
                   right="0"
                   w="100%"
                   zIndex={2}
-                  bgImage="linear-gradient(0deg, black 60%, rgba(0,0,0, 0))"
+                  bgImage="linear-gradient(0deg, rgba(0,0,0, 0.5) 70%, rgba(0,0,0, 0))"
                 >
-                  <Text color="teal.400" fontSize="sm">
+                  <Text color="teal.300" fontSize="sm" fontWeight="bold">
                     {item.sectionName} /{" "}
                     {moment(`${item.webPublicationDate}`).fromNow()}
                   </Text>

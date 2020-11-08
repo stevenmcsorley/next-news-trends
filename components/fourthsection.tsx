@@ -29,7 +29,7 @@ const Fourthsection = ({ data, error }) => {
             <GridItem rowSpan={2} colSpan={3} pos="relative">
               {data.results.slice(0, 2).map((item, index) => (
                 <Box>
-                  <AspectRatio  ratio={4 / 3}>
+                  <AspectRatio ratio={4 / 3}>
                     <Image src={item.fields.thumbnail} objectFit="fill" />
                   </AspectRatio>
                   <Text color="teal.400" fontSize="sm">
@@ -47,41 +47,41 @@ const Fourthsection = ({ data, error }) => {
                 </Box>
               ))}
             </GridItem>
-            
-              {data.results.slice(2, 3).map((item, index) => (
-                <GridItem rowSpan={2} colSpan={6} pos="relative">
-                  <Box
-                    p="4"
-                    pos="absolute"
-                    bottom="0"
-                    left="0"
-                    right="0"
-                    w="100%"
-                    zIndex={2}
-                    bgImage="linear-gradient(0deg, black 60%, rgba(0,0,0, 0))"
+
+            {data.results.slice(2, 3).map((item, index) => (
+              <GridItem rowSpan={2} colSpan={6} pos="relative">
+                <Box
+                  p="4"
+                  pos="absolute"
+                  bottom="0"
+                  left="0"
+                  right="0"
+                  w="100%"
+                  zIndex={2}
+                  bgImage="linear-gradient(0deg, rgba(0,0,0, 0.5) 70%, rgba(0,0,0, 0))"
+                >
+                  <Text color="teal.300" fontSize="sm" fontWeight="bold">
+                    {item.sectionName} /{" "}
+                    {moment(`${item.webPublicationDate}`).fromNow()}
+                  </Text>
+                  <NextLink
+                    href="/article/[...params].tsx"
+                    as={`/article/${item.id}`}
                   >
-                    <Text color="teal.400" fontSize="sm">
-                      {item.sectionName} /{" "}
-                      {moment(`${item.webPublicationDate}`).fromNow()}
-                    </Text>
-                    <NextLink
-                      href="/article/[...params].tsx"
-                      as={`/article/${item.id}`}
-                    >
-                      <Link color="white" fontSize="xl">
-                        {item.webTitle}
-                      </Link>
-                    </NextLink>
-                  </Box>
-                  <AspectRatio height="100%" ratio={4 / 3}>
+                    <Link color="white" fontSize="xl">
+                      {item.webTitle}
+                    </Link>
+                  </NextLink>
+                </Box>
+                <AspectRatio height="100%" ratio={4 / 3}>
                   <Image src={item.fields.thumbnail} objectFit="fill" />
                 </AspectRatio>
-                </GridItem>
-              ))}
-            
+              </GridItem>
+            ))}
+
             <GridItem rowSpan={2} colSpan={3} pos="relative">
-            {data.results.slice(3, 6).map((item, index) => (
-            <Flex align="center">
+              {data.results.slice(3, 6).map((item, index) => (
+                <Flex align="center">
                   <Flex
                     align="left"
                     p="4"
@@ -102,7 +102,7 @@ const Fourthsection = ({ data, error }) => {
                     </NextLink>
                   </Flex>
                 </Flex>
-                 ))}
+              ))}
             </GridItem>
           </Grid>
         </Container>
