@@ -13,7 +13,7 @@ import {
 import NextLink from "next/link";
 import moment from "moment";
 
-const MiddleNews = ({ data, error }) => {
+const SecondSection = ({ data, error }) => {
   return (
     <Container maxW="xl" centerContent>
       {error && <div>There was an error.</div>}
@@ -108,4 +108,4 @@ const MiddleNews = ({ data, error }) => {
   );
 };
 
-export default MiddleNews;
+export default SecondSection;
