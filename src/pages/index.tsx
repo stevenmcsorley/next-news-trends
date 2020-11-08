@@ -37,8 +37,8 @@ const Home = (props) => {
 };
 
 const queryOne = {
-  heading: "Music",
-  section: "music",
+  heading: "World",
+  section: "world",
   q: "",
 };
 
