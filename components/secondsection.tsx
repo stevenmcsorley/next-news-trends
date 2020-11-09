@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/core";
 import NextLink from "next/link";
 import moment from "moment";
+import { TruncateWords } from "./shared";
 
 const SecondSection = ({ data, error }) => {
   return (
@@ -46,10 +47,23 @@ const SecondSection = ({ data, error }) => {
                     href="/article/[...params].tsx"
                     as={`/article/${item.id}`}
                   >
-                    <Link color="white" fontSize="xl">
+                    <Link
+                      as="h4"
+                      color="white"
+                      fontSize={{ base: "1rem", lg: "2rem" }}
+                      lineHeight={{ base: "1rem", lg: "2rem" }}
+                      mb={{ base: 0, lg: 4 }}
+                    >
                       {item.webTitle}
                     </Link>
                   </NextLink>
+                  <Text
+                    color="white"
+                    fontSize="sm"
+                    d={{ base: "none", lg: "block" }}
+                  >
+                    {TruncateWords(item.fields.trailText, 50, "...")}
+                  </Text>
                 </Box>
                 <AspectRatio height="100%" ratio={4 / 3}>
                   <Image src={item.fields.thumbnail} objectFit="fill" />

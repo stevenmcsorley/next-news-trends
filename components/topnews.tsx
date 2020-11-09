@@ -11,6 +11,7 @@ import {
   Link,
 } from "@chakra-ui/core";
 import NextLink from "next/link";
+import { TruncateWords } from "./shared";
 import moment from "moment";
 
 const TopNews = ({ data, error }) => {
@@ -31,7 +32,7 @@ const TopNews = ({ data, error }) => {
                 rowSpan={{ base: 1, lg: 2 }}
                 colSpan={{ base: 1, lg: 3 }}
                 pos="relative"
-                mb={{base: 4, md: 0, lg:0}}
+                mb={{ base: 4, md: 0, lg: 0 }}
               >
                 <Box
                   pos="absolute"
@@ -51,10 +52,26 @@ const TopNews = ({ data, error }) => {
                       href="/article/[...params].tsx"
                       as={`/article/${item.id}`}
                     >
-                      <Link color="white" fontSize="xl">
+                      <Link
+                        as="h4"
+                        color="white"
+                        fontSize={{ base: "1rem", lg: "2rem" }}
+                        lineHeight={{ base: "1rem", lg: "2rem" }}
+                        width={{ base: "100%", lg: "60%" }}
+                        mb={{ base: 0, lg: 4 }}
+                      >
                         {item.webTitle}
                       </Link>
                     </NextLink>
+                    <Text
+                      d={{ base: "none", lg: "block" }}
+                      color="white"
+                      fontSize="sm"
+                      lineHeight="sm"
+                      width="50%"
+                    >
+                      {TruncateWords(item.fields.trailText, 50, "...")}
+                    </Text>
                   </Text>
                 </Box>
                 <AspectRatio height="100%" ratio={4 / 3}>
@@ -63,7 +80,11 @@ const TopNews = ({ data, error }) => {
               </GridItem>
             ))}
             {data.results.slice(1, 3).map((item, index) => (
-              <GridItem colSpan={2} pos="relative" mb={{base: 4, md: 0, lg:0}}>
+              <GridItem
+                colSpan={2}
+                pos="relative"
+                mb={{ base: 4, md: 0, lg: 0 }}
+              >
                 <AspectRatio maxH="100%" ratio={{ base: 4 / 3, lg: 16 / 9 }}>
                   <Image src={item.fields.thumbnail} width="100%" />
                 </AspectRatio>
@@ -85,7 +106,11 @@ const TopNews = ({ data, error }) => {
                       href="/article/[...params].tsx"
                       as={`/article/${item.id}`}
                     >
-                      <Link color="white" fontSize="lg">
+                      <Link
+                        color="white"
+                        fontSize={{ base: "1rem", lg: "2rem" }}
+                        lineHeight={{ base: "1rem", lg: "2rem" }}
+                      >
                         {item.webTitle}
                       </Link>
                     </NextLink>
