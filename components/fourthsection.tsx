@@ -85,7 +85,7 @@ const Fourthsection = ({ data, error }) => {
                   <Flex
                     align="left"
                     p="4"
-                    flexDirection="column"
+                    flexDirection={{base:"row", lg:"column"}}
                     justify="flex-start"
                   >
                     <Text color="grey" fontSize="sm">

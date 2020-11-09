@@ -27,7 +27,7 @@ const Fifthsection = ({ data, error }) => {
             mb="4"
           >
             {data.results.slice(0, 2).map((item, index) => (
-              <GridItem rowSpan={1} colSpan={6} pos="relative">
+              <GridItem rowSpan={1} colSpan={{base:1, lg: 6}} pos="relative">
                 <Box
                   p="4"
                   pos="absolute"
@@ -58,7 +58,7 @@ const Fifthsection = ({ data, error }) => {
             ))}
 
             {data.results.slice(2, 6).map((item, index) => (
-              <GridItem rowSpan={1} colSpan={3} pos="relative">
+              <GridItem rowSpan={1} colSpan={{base:1, lg: 3}} pos="relative">
                 <Box>
                   <AspectRatio ratio={4 / 3}>
                     <Image src={item.fields.thumbnail} objectFit="fill" />
