@@ -65,7 +65,7 @@ const queryFive = {
   q: "",
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps(context: any) {
 
   // const data = await fetchCategory(queryOne);
   // const muse = await fetchCategory(queryTwo);
