@@ -65,13 +65,22 @@ const queryFive = {
   q: "",
 };
 
-export const getServerSideProps = async () => {
+export async function getServerSideProps() {
 
-  const data = await fetchCategory(queryOne);
-  const muse = await fetchCategory(queryTwo);
-  const third = await fetchCategory(queryThree);
-  const fourth = await fetchCategory(queryFour);
-  const fifth = await fetchCategory(queryFive);
+  // const data = await fetchCategory(queryOne);
+  // const muse = await fetchCategory(queryTwo);
+  // const third = await fetchCategory(queryThree);
+  // const fourth = await fetchCategory(queryFour);
+  // const fifth = await fetchCategory(queryFive);
+
+  const [data, muse, third, fourth, fifth] = await Promise.all([
+    fetchCategory(queryOne), 
+    fetchCategory(queryTwo),
+    fetchCategory(queryThree),
+    fetchCategory(queryFour),
+    fetchCategory(queryFive)
+
+  ]);
 
   return {
     props: {
