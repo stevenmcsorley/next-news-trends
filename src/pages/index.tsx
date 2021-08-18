@@ -66,7 +66,7 @@ const queryFive = {
 };
 
 // export async function getStaticProps(context: any) {
-  Home.getInitialProps = async (context: any) => {
+  export async function getStaticProps(context: any) {
 
   // const data = await fetchCategory(queryOne);
   // const muse = await fetchCategory(queryTwo);
