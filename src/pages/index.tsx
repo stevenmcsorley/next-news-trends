@@ -7,31 +7,31 @@ import FourthSection from "../../components/fourthsection";
 import FifthSection from "../../components/fifthsection";
 import { fetchCategory } from "../../lib/category";
 
-const Home = (props: { data: JSX.IntrinsicAttributes & { data: any; error: any; }; muse: JSX.IntrinsicAttributes & { data: any; error: any; }; third: JSX.IntrinsicAttributes & { data: any; error: any; }; fourth: JSX.IntrinsicAttributes & { data: any; error: any; }; fifth: JSX.IntrinsicAttributes & { data: any; error: any; }; }) => {
+const Home = (props) => {
   return (
     <Container maxW="100%" p="0" margin="0">
       {/* <Heading m={4} textAlign="center">
         {queryOne.heading}
       </Heading> */}
-      <TopNews {...props.data} />
+      <TopNews {...props.data} key={1}/>
       <Container bg="black" maxW="100%" p="0" margin="0">
         <Heading m={4} textAlign="center" fontSize="lg" color="white">
           {queryTwo.heading}
         </Heading>
-        <SecondSection {...props.muse} />
+        <SecondSection {...props.muse} key={2}/>
       </Container>
       <Heading m={4} textAlign="center" fontSize="lg">
         {queryThree.heading}
       </Heading>
-      <ThirdSection {...props.third} />
+      <ThirdSection {...props.third} key={3}/>
       <Heading m={4} textAlign="center" fontSize="lg">
         {queryFour.heading}
       </Heading>
-      <FourthSection {...props.fourth} />
+      <FourthSection {...props.fourth} key={4}/>
       <Heading m={4} textAlign="center" fontSize="lg">
         {queryFive.heading}
       </Heading>
-      <FifthSection {...props.fifth} />
+      <FifthSection {...props.fifth} key={5}/>
     </Container>
   );
 };
