@@ -7,7 +7,7 @@ import FourthSection from "../../components/fourthsection";
 import FifthSection from "../../components/fifthsection";
 import { fetchCategory } from "../../lib/category";
 
-const Home = (props) => {
+const Home = (props: { data: JSX.IntrinsicAttributes & { data: any; error: any; }; muse: JSX.IntrinsicAttributes & { data: any; error: any; }; third: JSX.IntrinsicAttributes & { data: any; error: any; }; fourth: JSX.IntrinsicAttributes & { data: any; error: any; }; fifth: JSX.IntrinsicAttributes & { data: any; error: any; }; }) => {
   return (
     <Container maxW="100%" p="0" margin="0">
       {/* <Heading m={4} textAlign="center">
@@ -65,7 +65,8 @@ const queryFive = {
   q: "",
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
+
   const data = await fetchCategory(queryOne);
   const muse = await fetchCategory(queryTwo);
   const third = await fetchCategory(queryThree);
